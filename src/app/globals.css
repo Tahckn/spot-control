@@ -11,9 +11,13 @@
         @apply underline text-black
     }
     .active-sidebar {
-        @apply bg-bg-color rounded-l-2xl drop-shadow-md
+        @apply bg-bg-color rounded-l-2xl;
+        box-shadow: 0 8px 5px -5px black;
     }
     .btn {
         @apply ring-1 px-1.5 py-1 ring-primary-color rounded-sm hover:bg-primary-color hover:text-bg-component text-heading-color transition-colors duration-100 active:scale-95
+    }
+    .error {
+        @apply text-red-800 p-2 m-2.5 text-xs bg-pink-300 border-[1px] border-red-700 rounded-sm text-center
     }
 }

@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className='flex mx-auto justify-end items-center'>
         <Link href='/' className='mr-auto'>
           <div className='-ml-10 mt-2'>
-            <Image src='/assets/logo1.png' width={250} height={90} />
+            <Image src='/assets/logo1.png' width={250} height={90} className='w-auto' priority alt='logo'/>
           </div>
         </Link>
         <div className='flex space-x-3  md:space-x-4 items-center'>
