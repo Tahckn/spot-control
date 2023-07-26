@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { motion  } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useSignup } from '@/hooks/useSignup';
 
 
 export default function page() {
@@ -11,6 +12,7 @@ export default function page() {
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const [preview, setPreview] = useState();
+  const { signup, isPending, error } = useSignup();
 
   useEffect(() => {
     if (!thumbnail) {
@@ -26,15 +28,14 @@ export default function page() {
   }, [thumbnail]);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(email,password,displayName,thumbnail);
-  }
+    e.preventDefault();
+    signup(email, password, displayName, thumbnail);
+  };
 
   const handleFileChange = (e) => {
     setThumbnail(null);
     let selected = e.target.files[0];
     console.log(selected);
-
 
     if (!selected) {
       setThumbnailError('Please select a file');
@@ -50,12 +51,17 @@ export default function page() {
     }
     setThumbnailError(null);
     setThumbnail(selected);
-    
+
     console.log('thumbnail updated');
   };
 
   return (
-    <form className='max-w-[360px] mx-auto my-[60px] p-10 border-[1px] text-black border-[#ddd] bg-bg-component drop-shadow-lg rounded-sm' onSubmit={handleSubmit}>
+    <motion.form
+      layout
+      initial={{ scale: 0 ,opacity:0}}
+      animate={{ scale: 1, opacity:1, transition: { duration: 0.5 } }}
+      className='max-w-[360px] mx-auto my-[60px] p-10 border-[1px] text-black border-[#ddd] bg-bg-component drop-shadow-lg rounded-sm'
+      onSubmit={handleSubmit}>
       <h2 className='font-extrabold text-2xl mb-4'>Sign Up</h2>
       <div className='mb-6'>
         <label htmlFor='email'>
@@ -89,7 +95,7 @@ export default function page() {
           <input
             className='drop-shadow-sm py-1 px-1 w-full ring-[1px] ring-gray-200 active:scale-105 transition duration-100 outline-none'
             id='displayName'
-            type='password'
+            type='text'
             required
             onChange={(e) => setDisplayName(e.target.value)}
             value={displayName}
@@ -108,16 +114,30 @@ export default function page() {
             onChange={handleFileChange}
           />
           <motion.div
-          layout
-          initial={{ scale:0 }}
-          animate={{ scale:1, transition:{duration:1}}}
-          className='flex items-center justify-center w-full'>
-          {preview && <Image width={100} height={100} alt='image' src={preview} className='w-24 h-24 rounded-full object-cover p-2'/>}
-          {thumbnailError && <div className='error'>{thumbnailError}</div>}
+            layout
+            initial={{ scale: 0 }}
+            animate={{ scale: 1, transition: { duration: 1 } }}
+            className='flex items-center justify-center w-full'>
+            {preview && (
+              <Image
+                width={100}
+                height={100}
+                alt='image'
+                src={preview}
+                className='w-24 h-24 rounded-full object-cover p-2'
+              />
+            )}
+            {thumbnailError && <div className='error'>{thumbnailError}</div>}
           </motion.div>
         </label>
       </div>
-      <button className='btn'>Sign up</button>
-    </form>
+      {!isPending && <button className='btn'>Sign up</button>}
+      {isPending && (
+        <button className='btn' disabled>
+          Loading
+        </button>
+      )}
+      {error && <div className='error'>{error}</div>}
+    </motion.form>
   );
 }

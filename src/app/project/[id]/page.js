@@ -1,6 +1,6 @@
 
-export default function page() {
+export default function page({params}) {
   return (
-    <div>project details</div>
+    <div>project details{params.id}</div>
   )
 }

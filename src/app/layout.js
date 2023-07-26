@@ -17,18 +17,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang='en' className={poppins.className}>
       <AuthContextProvider>
-        <body>
-          <main className={`${poppins.className} flex`}>
-            <Sidebar />
-            <div className='grow py-0 px-[60px]'>
-              <Navbar />
-
-              {children}
-            </div>
-          </main>
-        </body>
+          <body>
+            <main className='flex'>
+              <Sidebar />
+              <div className='grow py-0 px-[60px]'>
+                <Navbar />
+                {children}
+              </div>
+            </main>
+          </body>
       </AuthContextProvider>
     </html>
   );
