@@ -9,10 +9,12 @@ module.exports = {
     extend: {
       colors:{
         'heading-color':'#040404',
-        'primary-color':'#6e66e3',
+        'primary-color':'#E6C939',
         'highlight-color':'#d13267',
-        'bg-color':'#e2e2e2',
-        'bg-component':'#f4f4f4'
+        'bg-color':'#242529',
+        'bg-component':'#353537',
+        'text-color':'#fbebdd',
+        'border-color':'#575337',
       },
     },
   },

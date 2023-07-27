@@ -12,7 +12,7 @@ export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const { dispatch, authIsReady } = useAuthContext();
+  const { dispatch } = useAuthContext();
 
   const signup = async (email, password, displayName, thumbnail) => {
     setError(null);
@@ -46,12 +46,12 @@ export const useSignup = () => {
 
       //set cookie logged
       setCookie('logged', 'true');
-
-      // redirect to dashboard
-      window.location.reload();
       
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user });
+
+      // redirect to dashboard
+      window.location.reload();
 
       if (!isCancelled) {
         setIsPending(false);

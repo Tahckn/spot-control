@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { projectAuth, projectFirestore } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
-import { setCookie, hasCookie } from 'cookies-next';
+import { setCookie } from 'cookies-next';
 
 export const useLogin = () => {
   const [isCancelled, setIsCancelled] = useState(false);

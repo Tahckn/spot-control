@@ -4,21 +4,19 @@
 
 @layer base{
     :root {
-        @apply bg-bg-color text-heading-color
+        @apply bg-bg-color text-text-color
     }
 
     .active-nav {
-        @apply underline text-black
+        @apply underline text-text-color ring-1 ring-primary-color p-2
     }
-    .active-sidebar {
-        @apply bg-bg-color rounded-l-2xl;
-        box-shadow: 0 8px 5px -5px rgb(54, 54, 54);
-    }
+
     .btn {
-        @apply ring-1 px-1.5 py-1 ring-primary-color rounded-sm hover:bg-primary-color hover:text-bg-component text-heading-color transition-colors duration-100 active:scale-95
+        @apply ring-1 px-5 py-2 ring-primary-color rounded-sm hover:bg-primary-color hover:text-bg-component text-text-color transition-colors duration-100 active:scale-95 text-sm
     }
+
     .btn:disabled {
-        @apply text-gray-400 bg-primary-color
+        @apply px-5 py-2 text-sm text-heading-color/80 transition-colors duration-100 bg-primary-color ring-0 outline-none
     }
     .error {
         @apply text-red-800 p-2 m-2.5 text-xs bg-pink-300 border-[1px] border-red-700 rounded-sm text-center

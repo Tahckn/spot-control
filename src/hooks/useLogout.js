@@ -24,15 +24,15 @@ export const useLogout = () => {
 
       // sign the user out
       await projectAuth.signOut();
-
-      //redirect to login
-      window.location.reload();
       
       // dispatch logout action
       dispatch({ type: 'LOGOUT' });
 
       //delete cookie logged out
       deleteCookie('logged');
+
+      //redirect to login
+      window.location.reload();
 
       // update state
       if (!isCancelled) {
