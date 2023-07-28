@@ -13,20 +13,20 @@ export default function Navbar() {
 
   return (
     <motion.div
-      className='z-10 text-[15px] text-text-color font-semibold w-full py-30 box-border mb-20'
+      className='z-10 text-[15px] text-text-color font-semibold w-full py-[27px] box-border mb-20'
       initial={{ y:-200, opacity: 0 }}
       animate={{ y: 0, opacity: 1}}
       transition={{ duration: 0.5}}
       exit={{ opacity: 0 }}
       layout>
-      <div className='flex mx-auto justify-end items-center'>
-        <Link href='/' className='mr-auto'>
-          <div className='-ml-10 mt-2'>
+      <div className='flex mx-auto justify-end items-center mt-4'>
+        <Link href='/' className='mr-auto items-center'>
+          <div>
             <Image
-              src='/assets/logo1.png'
+              src='/assets/logo3.png'
               width={250}
-              height={90}
-              className='w-auto'
+              height={100}
+              className='w-auto rounded-md'
               priority
               alt='logo'
             />

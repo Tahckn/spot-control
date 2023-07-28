@@ -14,7 +14,7 @@ export default function Sidebar() {
   if (user && authIsReady && hasUser) {
     return (
       <motion.div
-        className='z-20 hidden w-[300px] md:inline-block min-w-[300px] bg-bg-color border-r-[1px] border-r-border-color min-h-screen box-border relative text-[#fff]'
+        className='z-20 w-[300px] min-w-[300px] bg-bg-color  min-h-screen box-border relative text-[#fff]'
         initial={{ x: '-50%', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -22,13 +22,16 @@ export default function Sidebar() {
         layout>
         <div className='fixed w-full max-w-[300px]'>
           <motion.div
-            className='font-bold text-center tracking-[1px] py-10 px-[30px] border-b-[1px] w-full border-b-border-color'
+            className='font-semibold text-center tracking-[1px] py-10 px-[30px] border-b-[1px] w-full border-b-border-color'
             initial={{ x: '-30%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7 }}
             layout>
             <Avatar src={user.photoURL} />
-            <p>Hey {user.displayName}</p>
+            <p>{user.displayName}</p>
+            <p className='text-xs mt-1 font-light text-[#7c7b80]'>
+              {user.email}
+            </p>
           </motion.div>
           <motion.nav
             className='mt-20 mx-5'
@@ -40,10 +43,9 @@ export default function Sidebar() {
               <li className='mt-[10px] relative'>
                 {currentRoute == '/' && (
                   <motion.span
-                    initial={{ scaleY: 0, originY: 0 }}
+                    initial={{ scaleX: 0, originX: 1 }}
                     animate={{
-                      scaleY: 1,
-                      originY: 0,
+                      scaleX: 1,
                     }}
                     transition={{
                       duration: 0.7,
@@ -54,14 +56,18 @@ export default function Sidebar() {
                     className='z-0 w-full absolute bg-bg-component  h-full rounded-xl'></motion.span>
                 )}
                 <Link
-                  className='flex items-center py-[10px] px-[15px] w-full text-text-color box-border rounded-l-2xl'
+                  className='flex items-center py-[16px] px-[15px] w-full text-text-color box-border rounded-l-2xl'
                   href='/'>
                   <MdOutlineSpaceDashboard
                     size={20}
-                    className='mr-[10px] z-10'
+                    className={`mr-[10px] z-10 ${
+                      currentRoute == '/' && 'text-primary-color'
+                    }`}
                   />
                   <span
-                    className='mr-[10px] p-1 z-10'>
+                    className={`mr-[10px] z-10 ${
+                      currentRoute == '/' && 'text-primary-color'
+                    }`}>
                     Dashboard
                   </span>
                 </Link>
@@ -70,10 +76,9 @@ export default function Sidebar() {
               <li className='mt-[10px] relative'>
                 {currentRoute == '/create' && (
                   <motion.span
-                    initial={{ scaleY: 0, originY: 1 }}
+                    initial={{ scaleX: 0, originX: 1 }}
                     animate={{
-                      scaleY: 1,
-                      originY: 1,
+                      scaleX: 1,
                     }}
                     transition={{
                       duration: 0.2,
@@ -81,13 +86,23 @@ export default function Sidebar() {
                       damping: '15',
                       stiffness: 75,
                     }}
-                    className='z-0 w-full absolute bg-bg-component  h-full rounded-xl'></motion.span>
+                    className='z-0 w-full absolute bg-sidebar-item  h-full rounded-xl'></motion.span>
                 )}
                 <Link
-                  className='flex items-center py-[10px] px-[15px] w-full text-text-color box-border rounded-l-2xl'
+                  className='flex items-center py-[16px] px-[15px] w-full text-text-color box-border rounded-l-2xl'
                   href='/create'>
-                  <MdAdd className='mr-[10px] z-10' size={20} />
-                  <span className='mr-[10px] z-10 p-1'>New Project</span>
+                  <MdAdd
+                    className={`mr-[10px] z-10 ${
+                      currentRoute == '/create' && 'text-primary-color'
+                    }`}
+                    size={20}
+                  />
+                  <span
+                    className={`mr-[10px] z-10 ${
+                      currentRoute == '/create' && 'text-primary-color'
+                    }`}>
+                    New Project
+                  </span>
                 </Link>
               </li>
             </ul>

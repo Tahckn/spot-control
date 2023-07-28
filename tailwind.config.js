@@ -7,16 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors:{
-        'heading-color':'#040404',
-        'primary-color':'#E6C939',
-        'highlight-color':'#d13267',
-        'bg-color':'#242529',
-        'bg-component':'#353537',
-        'text-color':'#fbebdd',
-        'border-color':'#575337',
+      colors: {
+        'heading-color': '#040404',
+        'primary-color': '#8071fd',
+        'highlight-color': '#d13267',
+        'bg-color': '#262837',
+        'bg-component': '#2f304a',
+        'text-color': '#d8d8d7',
+        'border-color': '#3b3949',
+        'bg-main': '#1f1d2c',
+        'sidebar-item': '#2f304a',
       },
     },
   },
   plugins: [],
-}
+};
