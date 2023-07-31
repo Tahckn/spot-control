@@ -30,7 +30,7 @@ export default function OnlineUsers() {
   if (user && authIsReady && hasUser) {
     return (
       <motion.div
-        className='hidden md:inline-block z-20 w-[250px] h-[100vh] min-w-[250px] py-[30px] box-border bg-bg-color text-heading-color'
+        className='hidden md:inline-block z-20 w-[250px] min-h-screen min-w-[250px] py-[30px] box-border bg-bg-color text-heading-color'
         variants={container}
         animate='show'
         initial='hidden'>

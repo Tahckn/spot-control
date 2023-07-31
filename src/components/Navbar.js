@@ -14,22 +14,15 @@ export default function Navbar() {
   return (
     <motion.div
       className='z-10 text-[15px] text-text-color font-semibold w-full py-[27px] box-border mb-20'
-      initial={{ y:-200, opacity: 0 }}
-      animate={{ y: 0, opacity: 1}}
-      transition={{ duration: 0.5}}
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
       exit={{ opacity: 0 }}
       layout>
       <div className='flex mx-auto justify-end items-center mt-4'>
         <Link href='/' className='mr-auto items-center'>
           <div>
-            <Image
-              src='/assets/logo3.png'
-              width={250}
-              height={100}
-              className='w-auto rounded-md'
-              priority
-              alt='logo'
-            />
+            <h1 className='text-2xl font-semibold uppercase text-primary-color'>Spot<span className='text-sm text-text-color'>Control</span> </h1>
           </div>
         </Link>
         <div className='flex space-x-3  md:space-x-4 items-center'>
@@ -59,7 +52,7 @@ export default function Navbar() {
                   <svg
                     aria-hidden='true'
                     role='status'
-                    class='inline w-4 h-4 mr-3 text-white animate-spin'
+                    class='inline w-4 h-4  text-white animate-spin'
                     viewBox='0 0 100 101'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'>
@@ -72,7 +65,6 @@ export default function Navbar() {
                       fill='#fdf17e'
                     />
                   </svg>
-                  Logging out...
                 </button>
               )}
             </div>

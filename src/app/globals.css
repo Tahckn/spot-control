@@ -12,7 +12,7 @@
     }
 
     .btn {
-        @apply ring-1 px-5 py-2 ring-primary-color rounded-sm hover:bg-primary-color hover:text-bg-component text-text-color transition-colors duration-100 active:scale-95 text-sm
+        @apply ring-1 px-5 py-2 ring-primary-color rounded-sm hover:bg-primary-color hover:text-bg-component text-text-color transition-colors duration-100 active:scale-95 text-sm truncate
     }
 
     .btn:disabled {
@@ -23,8 +23,47 @@
         @apply text-red-800 p-2 m-2.5 text-xs bg-pink-300 border-[1px] border-red-700 rounded-sm text-center
     }
 
-    input {
-        @apply text-sm rounded-lg block w-full px-1 py-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-text-color focus:ring-primary-color focus:border-primary-color
+    input,textarea {
+        @apply text-sm border-none rounded-lg block w-full px-1 py-2.5 bg-gray-700  placeholder-gray-400 text-text-color active:scale-105 transition duration-150 outline-none
+    }
+
+
+    ::-webkit-file-upload-button{
+        @apply bg-gray-700 mr-3 cursor-pointer drop-shadow-xl rounded-md text-text-color/50 border-none hover:bg-bg-component
+    }
+
+    .date-container{
+        position: relative;
+    }
+
+
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+
+    }
+
+    textarea {
+        min-height: 160px;
+        max-height: 160px;
+        resize: none;
+    }
+    label{
+        display: block;
+        margin: 24px auto;
+    }
+    label span {
+        display: block;
+        margin-bottom: 6px;
     }
 
     input:-webkit-autofill,
@@ -46,5 +85,7 @@
     ::-ms-reveal {
         filter: invert(100%);
     }
+    
+    
 
 }

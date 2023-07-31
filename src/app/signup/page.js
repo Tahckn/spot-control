@@ -66,7 +66,7 @@ export default function page() {
         <label htmlFor='email'>
           <span className='flex flex-col text-sm mb-1 '>email:</span>
           <input
-            className='drop-shadow-sm  w-full  active:scale-105 transition duration-100 outline-none'
+            className='drop-shadow-sm  w-full'
             id='email'
             type='email'
             required
@@ -79,7 +79,7 @@ export default function page() {
         <label htmlFor='password'>
           <span className='flex flex-col text-sm mb-1'>password:</span>
           <input
-            className='drop-shadow-sm  w-full  active:scale-105 transition duration-100 outline-none'
+            className='drop-shadow-sm  w-full'
             id='password'
             type='password'
             required
@@ -92,7 +92,7 @@ export default function page() {
         <label htmlFor='displayName'>
           <span className='flex flex-col text-sm mb-1'>display name:</span>
           <input
-            className='drop-shadow-sm  w-full  active:scale-105 transition duration-100 outline-none'
+            className='drop-shadow-sm  w-full'
             id='displayName'
             type='text'
             required
