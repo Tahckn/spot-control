@@ -3,12 +3,21 @@ import { useState, useEffect } from 'react';
 import { projectAuth, projectFirestore } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
 import { setCookie } from 'cookies-next';
+import { useRouter } from 'next/navigation';
 
 export const useLogin = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
+  const [cook, setCook] = useState(false);
   const { dispatch } = useAuthContext();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (cook) {
+      router.push('/');
+    }
+  }, [cook]);
 
   const login = async (email, password) => {
     setError(null);
@@ -29,9 +38,7 @@ export const useLogin = () => {
 
       //set cookie logged in
       setCookie('logged', 'true');
-
-      //redirect to dashboard
-      window.location.reload();
+      setCook(true);
 
       if (!isCancelled) {
         setIsPending(false);

@@ -24,19 +24,56 @@
     }
 
     input,textarea {
-        @apply text-sm border-none rounded-lg block w-full px-1 py-2.5 bg-gray-700  placeholder-gray-400 text-text-color active:scale-105 transition duration-150 outline-none
+        @apply text-sm border-none rounded-lg block w-full px-1 py-2.5 bg-gray-700  placeholder-gray-400 text-text-color active:scale-105 transition duration-150 outline-none 
     }
 
-
     ::-webkit-file-upload-button{
-        @apply bg-gray-700 mr-3 cursor-pointer drop-shadow-xl rounded-md text-text-color/50 border-none hover:bg-bg-component
+        @apply hidden
     }
 
     .date-container{
         position: relative;
     }
 
+    .inp{
+       @apply shadow-[inset_0_-2px_2px_#1f1d2c]
+    }
 
+    .project-list{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+        gap: 20px;
+    }
+
+    .project-list .avatar {
+        width: 35px;
+        height: 35px;
+        border: 2px solid #8071fd;
+    }
+
+    .online .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sidebar .avatar{
+        width: 60px;
+        height: 60px;
+    }
+
+    .summary .avatar {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #8071fd;
+    }
+
+    .project-details {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        align-items: start;
+        gap: 60px;
+    }
 
     input[type="date"]::-webkit-calendar-picker-indicator {
         background: transparent;

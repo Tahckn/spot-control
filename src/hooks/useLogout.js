@@ -3,12 +3,21 @@ import { useEffect, useState } from 'react';
 import { projectAuth, projectFirestore } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
 import { deleteCookie } from 'cookies-next';
+import { useRouter } from 'next/navigation';
 
 export const useLogout = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch, user } = useAuthContext();
+  const [cook, setCook] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (cook) {
+      router.push('/login');
+    }
+  }, [cook]);
 
   const logout = async () => {
     setError(null);
@@ -24,15 +33,13 @@ export const useLogout = () => {
 
       // sign the user out
       await projectAuth.signOut();
-      
+
       // dispatch logout action
       dispatch({ type: 'LOGOUT' });
 
       //delete cookie logged out
       deleteCookie('logged');
-
-      //redirect to login
-      window.location.reload();
+      setCook(true);
 
       // update state
       if (!isCancelled) {

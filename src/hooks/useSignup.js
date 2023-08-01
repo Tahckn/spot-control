@@ -7,12 +7,21 @@ import {
 } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
 import { setCookie } from 'cookies-next';
+import { useRouter } from 'next/navigation';
 
 export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
+  const [cook, setCook] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (cook) {
+      router.push('/');
+    }
+  }, [cook]);
 
   const signup = async (email, password, displayName, thumbnail) => {
     setError(null);
@@ -51,7 +60,7 @@ export const useSignup = () => {
       dispatch({ type: 'LOGIN', payload: res.user });
 
       // redirect to dashboard
-      window.location.reload();
+      setCook(true);
 
       if (!isCancelled) {
         setIsPending(false);

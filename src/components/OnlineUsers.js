@@ -46,10 +46,12 @@ export default function OnlineUsers() {
                 className='flex justify-end text-sm items-center text-text-color my-3.5'
                 variants={listItem}>
                 <span className='mr-2'>{user.displayName}</span>
-                <div className='relative'>
-                  <Avatar src={user.photoURL} className='w-10 h-10' />
-
-                  <span className={`absolute -top-1 right-0 rounded-full w-4 h-4 ${user.online ? 'bg-[#62d86a] animate-pulse' : 'bg-gray-700'} `}></span>
+                <div className='relative online'>
+                  <Avatar className='avatar' src={user.photoURL}/>
+                  <span
+                    className={`absolute -top-1 right-0 rounded-full w-4 h-4 ${
+                      user.online ? 'bg-[#62d86a] animate-pulse' : 'bg-gray-700'
+                    } `}></span>
                 </div>
               </motion.div>
             ))}

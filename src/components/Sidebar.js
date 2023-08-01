@@ -22,7 +22,7 @@ export default function Sidebar() {
         layout>
         <div className='fixed w-full max-w-[300px]'>
           <motion.div
-            className='font-semibold text-center tracking-[1px] py-10 px-[30px] border-b-[1px] w-full border-b-border-color'
+            className='font-semibold text-center tracking-[1px] py-10 px-[30px] border-b-[1px] w-full border-b-border-color sidebar'
             initial={{ x: '-30%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7 }}
@@ -53,7 +53,7 @@ export default function Sidebar() {
                       damping: '15',
                       stiffness: 75,
                     }}
-                    className='z-0 w-full absolute bg-bg-component  h-full rounded-xl'></motion.span>
+                    className='z-0 w-full absolute bg-sidebar-item drop-shadow-md  h-full rounded-xl'></motion.span>
                 )}
                 <Link
                   className='flex items-center py-[16px] px-[15px] w-full text-text-color box-border rounded-l-2xl'
@@ -86,7 +86,7 @@ export default function Sidebar() {
                       damping: '15',
                       stiffness: 75,
                     }}
-                    className='z-0 w-full absolute bg-sidebar-item  h-full rounded-xl'></motion.span>
+                    className='z-0 w-full absolute bg-sidebar-item drop-shadow-md  h-full rounded-xl'></motion.span>
                 )}
                 <Link
                   className='flex items-center py-[16px] px-[15px] w-full text-text-color box-border rounded-l-2xl'

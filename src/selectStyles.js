@@ -6,22 +6,19 @@ const customStyles = {
     borderRadius: '8px',
     color: '#d8d8d7',
     // Overwrittes the different states of border
-    borderColor: state.isFocused ? '#384151' : '#384151',
+    borderColor: state.isFocused ? '#262837' : '#262837',
     // Removes weird border around container
-    boxShadow: state.isFocused ? null : null,
+    boxShadow: 'inset 0 -2px 4px #1f1d2c',
     '&:hover': {
       // Overwrittes the different states of border
-      borderColor: state.isFocused ? '#384151' : '#384151',
-    },
-    '&:active': {
-      scale: '1.05',
+      borderColor: state.isFocused ? '#262837' : '#262837',
     },
   }),
 
   input: (base) => ({
     ...base,
     color: '#d8d8d7',
-    padding:'4px'
+    padding:'4px',
   }),
 
   singleValue: (base) => ({
@@ -48,6 +45,7 @@ const customStyles = {
   option: (styles, { isFocused, isSelected }) => ({
     ...styles,
     background: isFocused ? '#2f314a' : isSelected ? '#807aff' : undefined,
+    
     zIndex: 1,
     color: '#d8d8d7',
     '&:active': {
