@@ -1,6 +1,7 @@
 'use client';
 import { useDocument } from '@/hooks/useDocument';
 import ProjectSummary from '@/components/ProjectSummary';
+import ProjectComments from '@/components/ProjectComments';
 
 export default function page({ params }) {
   const id = params.id;
@@ -12,7 +13,8 @@ export default function page({ params }) {
 
   return (
     <div className='project-details'>
-      <ProjectSummary project={document}/>
+      <ProjectSummary project={document} />
+      <ProjectComments project={document} />
     </div>
   );
 }

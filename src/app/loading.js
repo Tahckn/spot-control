@@ -1,5 +1,5 @@
 export default function loading() {
-  const skeletonProjects = Array.from({ length: 4 }).map((_, index) => ({
+  const skeletonProjects = Array.from({ length: 6 }).map((_, index) => ({
     id: index,
     name: 'Loading...',
     dueDate: { toDate: () => new Date() },

@@ -12,7 +12,7 @@
     }
 
     .btn {
-        @apply ring-1 px-5 py-2 ring-primary-color rounded-sm hover:bg-primary-color hover:text-bg-component text-text-color transition-colors duration-100 active:scale-95 text-sm truncate
+        @apply ring-1 px-5 py-2 ring-primary-color rounded-lg hover:bg-primary-color hover:text-bg-component text-text-color transition-colors duration-100 active:scale-95 text-sm truncate 
     }
 
     .btn:disabled {
@@ -24,7 +24,7 @@
     }
 
     input,textarea {
-        @apply text-sm border-none rounded-lg block w-full px-1 py-2.5 bg-gray-700  placeholder-gray-400 text-text-color active:scale-105 transition duration-150 outline-none 
+        @apply text-sm border-none rounded-lg block w-full px-1 py-2.5 bg-[#303846]  placeholder-gray-400 text-text-color active:scale-105 transition duration-150 outline-none  drop-shadow-lg
     }
 
     ::-webkit-file-upload-button{
@@ -50,22 +50,33 @@
         width: 35px;
         height: 35px;
         border: 2px solid #8071fd;
+        @apply drop-shadow-md
     }
 
     .online .avatar {
         width: 50px;
         height: 50px;
+        @apply drop-shadow-md
     }
 
     .sidebar .avatar{
         width: 60px;
         height: 60px;
+        @apply drop-shadow-md
     }
 
     .summary .avatar {
         width: 50px;
         height: 50px;
         border: 2px solid #8071fd;
+        @apply drop-shadow-md
+    }
+
+    .comments .avatar{
+        width: 30px;
+        height: 30px;
+        border: 2px solid #8071fd;
+        @apply drop-shadow-md
     }
 
     .project-details {
@@ -113,8 +124,8 @@
     select:-webkit-autofill:hover,
     select:-webkit-autofill:focus {
         -webkit-text-fill-color: #d8d8d7;
-        -webkit-box-shadow: 0 0 0px 1000px #384151 inset;
-        box-shadow: 0 0 0px 1000px #384151 inset;
+        -webkit-box-shadow: 0 0 0px 1000px #303846 inset;
+        box-shadow: 0 0 0px 1000px #303846 inset;
         transition: background-color 5000s ease-in-out 0s;
         color: white;
     }
