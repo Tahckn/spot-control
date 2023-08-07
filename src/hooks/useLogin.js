@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { projectAuth, projectFirestore } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
 import { setCookie } from 'cookies-next';
-import { useRouter } from 'next/navigation';
 
 export const useLogin = () => {
   const [isCancelled, setIsCancelled] = useState(false);
@@ -11,11 +10,10 @@ export const useLogin = () => {
   const [isPending, setIsPending] = useState(false);
   const [cook, setCook] = useState(false);
   const { dispatch } = useAuthContext();
-  const router = useRouter();
 
   useEffect(() => {
     if (cook) {
-      router.push('/');
+      window.location.reload()
     }
   }, [cook]);
 

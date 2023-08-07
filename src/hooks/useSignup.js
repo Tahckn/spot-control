@@ -19,7 +19,7 @@ export const useSignup = () => {
 
   useEffect(() => {
     if (cook) {
-      router.push('/');
+      window.location.reload();
     }
   }, [cook]);
 
@@ -55,7 +55,7 @@ export const useSignup = () => {
 
       //set cookie logged
       setCookie('logged', 'true');
-      
+
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user });
 
