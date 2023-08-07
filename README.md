@@ -40,9 +40,9 @@ cd spot-control
 npm install
 
 # Set up Firebase configuration
-# Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-# Obtain your Firebase configuration (API keys, auth domain, etc.)
-# Replace the Firebase configuration in the appropriate files
+- ** Create a Firebase project at Firebase Console.**
+- ** Obtain your Firebase configuration (API keys, auth domain, etc.).**
+- ** Replace the Firebase configuration in the appropriate files.**
 
 # Run the development server
 npm run dev
