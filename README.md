@@ -1,4 +1,5 @@
 # Spot Control - Project Management System
+You can access the live version of Spot Control [here](https://spot-control.vercel.app/).
 
 Spot Control is a web-based project management system that allows users to efficiently manage and collaborate on projects. This platform is designed to streamline project organization, team collaboration, and communication. With features such as project creation, user authentication, assignment of team members, and commenting, Spot Control provides a comprehensive solution for project teams to work together seamlessly.
 
