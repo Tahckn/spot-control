@@ -10,12 +10,12 @@ export default function ProjectSummary({ project }) {
   const router = useRouter();
   const { user } = useAuthContext();
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     deleteDocument(project.id);
     router.push("/");
   };
 
-  if (project) {
+  if (project && user) {
     return (
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <div className='bg-bg-color p-7 rounded-2xl'>

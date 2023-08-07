@@ -7,7 +7,6 @@ import {
 } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
 import { setCookie } from 'cookies-next';
-import { useRouter } from 'next/navigation';
 
 export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false);
@@ -15,7 +14,6 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
   const [cook, setCook] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     if (cook) {

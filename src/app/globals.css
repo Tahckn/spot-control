@@ -25,7 +25,7 @@
 
   input,
   textarea {
-    @apply text-sm border-none rounded-lg block w-full px-1 py-2.5 bg-[#303846] placeholder-gray-400 text-text-color active:scale-105 transition duration-150 outline-none drop-shadow-lg;
+    @apply text-sm outline-none rounded-lg block w-full px-1 py-2.5 bg-[#303846] placeholder-gray-400 text-text-color active:scale-105 transition duration-150 border-none drop-shadow-lg focus:border-none focus:outline-none;
   }
 
   ::-webkit-file-upload-button {
@@ -74,8 +74,8 @@
   }
 
   .comments .avatar {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border: 2px solid #8071fd;
     @apply drop-shadow-md;
   }

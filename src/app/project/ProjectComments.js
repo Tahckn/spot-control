@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useFirestore } from '@/hooks/useFirestore';
 import LoadingButton from '../../components/LoadingButton';
 import Avatar from '../../components/Avatar';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 export default function ProjectComments({ project }) {
   const { updateDocument, response } = useFirestore('projects');
@@ -45,13 +46,20 @@ export default function ProjectComments({ project }) {
               <li
                 key={comment.id}
                 className='p-4 rounded-3xl mt-5 bg-bg-color drop-shadow-lg'>
-                <div className='flex items-center gap-2'>
+                <div className='flex items-start gap-2 mb-1'>
                   <Avatar src={comment.photoURL} />
-                  <p>{comment.displayName}</p>
+                  <div>
+                    <p>{comment.displayName}</p>
+                    <div className='text-sm text-[#888d91] mt-1 mb-2'>
+                      <p className='text-xs -mt-2'>
+                        {formatDistanceToNow(comment.createdAt.toDate(), {
+                          addSuffix: true,
+                        })}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className='text-sm text-[#888d91] mt-1 mb-2'>
-                  <p>date here</p>
-                </div>
+
                 <div className='text-sm'>
                   <p>{comment.content}</p>
                 </div>
@@ -89,9 +97,9 @@ export default function ProjectComments({ project }) {
           </div>
         ))}
         <div className='mt-4'>
-            <div className='w-[160px] h-5 bg-[#40435d] rounded-xl animate-pulse'></div>
-            <div className='min-h-[60px] mt-2 w-full rounded-xl bg-[#40435d] animate-pulse'></div>
-            <div className='h-[36px] mt-4 w-[143px] bg-[#40435d] rounded-lg p-2 animate-pulse'></div>
+          <div className='w-[160px] h-5 bg-[#40435d] rounded-xl animate-pulse'></div>
+          <div className='min-h-[60px] mt-2 w-full rounded-xl bg-[#40435d] animate-pulse'></div>
+          <div className='h-[36px] mt-4 w-[143px] bg-[#40435d] rounded-lg p-2 animate-pulse'></div>
         </div>
       </div>
     );
