@@ -4,8 +4,8 @@ import { timestamp } from '@/firebase/config';
 import { useAuthContext } from '@/hooks/useAuthContext';
 import { motion } from 'framer-motion';
 import { useFirestore } from '@/hooks/useFirestore';
-import LoadingButton from './LoadingButton';
-import Avatar from './Avatar';
+import LoadingButton from '../../components/LoadingButton';
+import Avatar from '../../components/Avatar';
 
 export default function ProjectComments({ project }) {
   const { updateDocument, response } = useFirestore('projects');

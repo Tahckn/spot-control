@@ -3,137 +3,137 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        @apply bg-bg-main text-text-color
-    }
+  :root {
+    @apply bg-bg-main text-text-color;
+  }
 
-    .active-nav {
-        @apply decoration-4 underline underline-offset-8 text-text-color decoration-primary-color p-2
-    }
+  .active-nav {
+    @apply decoration-4 underline underline-offset-8 text-text-color decoration-primary-color p-2;
+  }
 
-    .btn {
-        @apply ring-1 px-5 py-2 ring-primary-color rounded-lg hover:bg-primary-color hover:text-bg-component text-text-color transition-colors duration-100 active:scale-95 text-sm truncate 
-    }
+  .btn {
+    @apply ring-1 px-5 py-2 ring-primary-color rounded-lg hover:bg-primary-color hover:text-bg-component text-text-color transition-colors duration-100 active:scale-95 text-sm truncate;
+  }
 
-    .btn:disabled {
-        @apply px-5 py-2 text-sm text-heading-color/80 transition-colors duration-100 bg-primary-color ring-0 outline-none
-    }
+  .btn:disabled {
+    @apply px-5 py-2 text-sm text-heading-color/80 transition-colors duration-100 bg-primary-color ring-0 outline-none;
+  }
 
-    .error {
-        @apply text-red-800 p-2 m-2.5 text-xs bg-pink-300 border-[1px] border-red-700 rounded-sm text-center
-    }
+  .error {
+    @apply text-red-800 p-2 m-2.5 text-xs bg-pink-300 border-[1px] border-red-700 rounded-sm text-center;
+  }
 
-    input,textarea {
-        @apply text-sm border-none rounded-lg block w-full px-1 py-2.5 bg-[#303846]  placeholder-gray-400 text-text-color active:scale-105 transition duration-150 outline-none  drop-shadow-lg
-    }
+  input,
+  textarea {
+    @apply text-sm border-none rounded-lg block w-full px-1 py-2.5 bg-[#303846] placeholder-gray-400 text-text-color active:scale-105 transition duration-150 outline-none drop-shadow-lg;
+  }
 
-    ::-webkit-file-upload-button{
-        @apply hidden
-    }
+  ::-webkit-file-upload-button {
+    @apply hidden;
+  }
 
-    .date-container{
-        position: relative;
-    }
+  .date-container {
+    position: relative;
+  }
 
-    .inp{
-       @apply shadow-[inset_0_-2px_2px_#1f1d2c]
-    }
+  .inp {
+    @apply shadow-[inset_0_-2px_2px_#1f1d2c];
+  }
 
-    .project-list{
-        margin-top: 40px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
-        gap: 20px;
-    }
+  .project-list {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
 
-    .project-list .avatar {
-        width: 35px;
-        height: 35px;
-        border: 2px solid #8071fd;
-        @apply drop-shadow-md
-    }
+  .project-list .avatar {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #8071fd;
+    @apply drop-shadow-md;
+  }
 
-    .online .avatar {
-        width: 50px;
-        height: 50px;
-        @apply drop-shadow-md
-    }
+  .online .avatar {
+    width: 50px;
+    height: 50px;
+    @apply drop-shadow-md;
+  }
 
-    .sidebar .avatar{
-        width: 60px;
-        height: 60px;
-        @apply drop-shadow-md
-    }
+  .sidebar .avatar {
+    width: 60px;
+    height: 60px;
+    @apply drop-shadow-md;
+  }
 
-    .summary .avatar {
-        width: 50px;
-        height: 50px;
-        border: 2px solid #8071fd;
-        @apply drop-shadow-md
-    }
+  .summary .avatar {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #8071fd;
+    @apply drop-shadow-md;
+  }
 
-    .comments .avatar{
-        width: 30px;
-        height: 30px;
-        border: 2px solid #8071fd;
-        @apply drop-shadow-md
-    }
+  .comments .avatar {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #8071fd;
+    @apply drop-shadow-md;
+  }
 
-    .project-details {
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        align-items: start;
-        gap: 60px;
-    }
+  .project-details {
+    @apply grid-cols-1 lg:grid-cols-2 gap-14 items-start grid
+  }
 
-    input[type="date"]::-webkit-calendar-picker-indicator {
-        background: transparent;
-        bottom: 0;
-        color: transparent;
-        cursor: pointer;
-        height: auto;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: auto;
+  input[type='date']::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+  }
 
-    }
+  textarea {
+    min-height: 160px;
+    max-height: 160px;
+    resize: none;
+  }
 
-    textarea {
-        min-height: 160px;
-        max-height: 160px;
-        resize: none;
-    }
-    label{
-        display: block;
-        margin: 24px auto;
-    }
-    label span {
-        display: block;
-        margin-bottom: 6px;
-    }
+  label {
+    display: block;
+    margin: 24px auto;
+  }
 
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    textarea:-webkit-autofill,
-    textarea:-webkit-autofill:hover,
-    textarea:-webkit-autofill:focus,
-    select:-webkit-autofill,
-    select:-webkit-autofill:hover,
-    select:-webkit-autofill:focus {
-        -webkit-text-fill-color: #d8d8d7;
-        -webkit-box-shadow: 0 0 0px 1000px #303846 inset;
-        box-shadow: 0 0 0px 1000px #303846 inset;
-        transition: background-color 5000s ease-in-out 0s;
-        color: white;
-    }
+  label span {
+    display: block;
+    margin-bottom: 6px;
+  }
 
-    ::-ms-reveal {
-        filter: invert(100%);
-    }
-    
-    
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #d8d8d7;
+    -webkit-box-shadow: 0 0 0px 1000px #303846 inset;
+    box-shadow: 0 0 0px 1000px #303846 inset;
+    transition: background-color 5000s ease-in-out 0s;
+    color: white;
+  }
 
+  ::-ms-reveal {
+    filter: invert(100%);
+  }
+
+  .filter-active{
+    @apply   bg-bg-color rounded-2xl text-text-color brightness-110
+  }
 }

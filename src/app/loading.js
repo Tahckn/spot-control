@@ -7,8 +7,18 @@ export default function loading() {
   }));
 
   return (
-    <div className="w-full">
-      <div className='-mb-1 h-[20px] w-[150px] bg-[#262837] rounded-lg p-2 animate-pulse'></div>
+    <div className='w-full'>
+      <div className='flex justify-between'>
+        <div className='-mb-1 h-[20px] w-[150px] bg-[#262837] rounded-lg p-2 animate-pulse'></div>
+        <div className="flex gap-x-2 mr-1">
+          <div className="w-[80px] h-[28px] bg-[#262837] animate-pulse rounded-2xl"></div>
+          <div className="w-[90px] h-[28px] bg-[#262837] animate-pulse rounded-2xl"></div>
+          <div className="w-[120px] h-[28px] bg-[#262837] animate-pulse rounded-2xl"></div>
+          <div className="w-[100px] h-[28px] bg-[#262837] animate-pulse rounded-2xl"></div>
+          <div className="w-[110px] h-[28px] bg-[#262837] animate-pulse rounded-2xl"></div>
+          <div className="w-[98px] h-[28px] bg-[#262837] animate-pulse rounded-2xl"></div>
+        </div>
+      </div>
       <div className='project-list'>
         {skeletonProjects.map((project) => (
           <div

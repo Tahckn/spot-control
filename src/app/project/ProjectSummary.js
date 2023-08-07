@@ -1,5 +1,5 @@
 import { useFirestore } from '@/hooks/useFirestore';
-import Avatar from './Avatar';
+import Avatar from '../../components/Avatar';
 import { motion } from 'framer-motion';
 import { useAuthContext } from '@/hooks/useAuthContext';
 import { useRouter } from 'next/navigation';

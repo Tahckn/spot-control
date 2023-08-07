@@ -10,16 +10,26 @@ export default function ProjectList({ projects }) {
         <motion.span
           className='active:translate-x-0 active:translate-y-0 transition duration-100 hover:-translate-x-2 hover:-translate-y-2 bg-bg-color rounded-2xl p-4 drop-shadow-lg'
           key={project.id}
-          initial={{ opacity: 0}}
-          animate={{ opacity: 1}}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3, delay: i * 0.1 }}>
+          layout='position'
+          transition={{
+            ease: 'linear',
+            duration: 0.3,
+            stiffness:50,
+            damping:5,
+            delay: i * 0.1,
+            layout: { duration: 0.2 },
+          }}>
           <Link href={`/project/${project.id}`}>
             <h4 className='font-semibold text-md leading-6'>{project.name}</h4>
             <p className='text-[13px] text-[#b5b7ba] mb-1'>
               Due by {project.dueDate.toDate().toDateString()}
             </p>
-            <p className='text-xs text-[#7a7d80]'>By {project.createdBy.displayName}</p>
+            <p className='text-xs text-[#7a7d80]'>
+              By {project.createdBy.displayName}
+            </p>
             <div className='mt-5 flex pt-[10px] border-t border-t-border-color'>
               <ul className='flex my-[5px] -mb-1'>
                 {project.assignedUsersList.slice(0, 4).map((user) => (
